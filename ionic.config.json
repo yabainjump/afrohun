@@ -1,0 +1,7 @@
+{
+  "name": "OneHealthApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
