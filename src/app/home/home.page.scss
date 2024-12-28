@@ -25,3 +25,85 @@
 #container a {
   text-decoration: none;
 }
+ion-card {
+  margin: 15px;
+}
+
+ion-button {
+  margin-top: 10px;
+}
+
+.post-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+  background: #fff;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+ion-avatar {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.post-author-details h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.post-author-details p {
+  margin: 0;
+  font-size: 14px;
+  color: gray;
+}
+
+.post-author-details span {
+  font-size: 12px;
+  color: darkgray;
+}
+
+.post-content .post-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.post-content .post-body {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.post-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.post-footer {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.post-actions ion-button {
+  margin-right: 1px;
+  font-size: 13px;
+}
+
+.post-comment-box {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.post-comment-box ion-input {
+  flex: 1;
+  margin-right: 10px;
+}

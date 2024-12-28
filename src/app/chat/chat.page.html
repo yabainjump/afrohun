@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ chatPartnerName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="chat-container">
+    <div *ngFor="let message of messages" [ngClass]="{'sent': message.senderId === currentUserId, 'received': message.senderId !== currentUserId}">
+      <div class="message-bubble">
+        <p>{{ message.content }}</p>
+        <span class="timestamp">{{ message.timestamp | date: 'shortTime' }}</span>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-item>
+    <ion-input
+      placeholder="Send message"
+      [(ngModel)]="newMessage"
+    ></ion-input>
+    <ion-button (click)="sendMessage()">
+      <ion-icon name="send"></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-footer>

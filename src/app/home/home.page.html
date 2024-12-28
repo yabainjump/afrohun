@@ -1,20 +1,51 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div *ngFor="let post of posts" class="post-card">
+    <!-- En-tête -->
+    <div class="post-header">
+      <ion-avatar>
+        <img [src]="post.author?.photoURL || 'assets/default-profile.png'" alt="Profile Photo" />
+      </ion-avatar>
+      <div class="post-author-details">
+        <h3>{{ post.author?.firstName }} {{ post.author?.lastName }}</h3>
+        <p>{{ post.author?.institution || 'User Description' }}</p>
+        <p>{{ post.relativeTime }}</p>
+        <span>{{ post.timestamp | date: 'short' }}</span>
+      </div>
+    </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <!-- Contenu de la publication -->
+    <div class="post-content">
+      <p class="post-title">{{ post.title }}</p>
+      <p class="post-body">{{ post.content }}</p>
+      <img *ngIf="post.imageUrl" [src]="post.imageUrl" alt="Post Image" class="post-image" />
+    </div>
+
+    <!-- Pied de publication -->
+    <div class="post-footer">
+      <div class="post-likes">
+        <p>
+          {{ post.likedBy?.length || 0 }} personnes ont aimé
+        </p>
+      </div>
+      <div class="post-actions">
+        <ion-button fill="clear" [disabled]="post.userHasLiked" (click)="likePost(post)">
+          ❤️ J'aime
+        </ion-button>
+        <ion-button fill="clear" (click)="addComment(post)">💬 Commenter</ion-button>
+        <ion-button fill="clear">🔗 Partager</ion-button>
+      </div>
+      <div class="post-comment-box">
+        <ion-input placeholder="Ajouter un commentaire..." [(ngModel)]="post.newComment"></ion-input>
+        <ion-button (click)="addComment(post)">Envoyer</ion-button>
+      </div>
+    </div>
   </div>
 </ion-content>
+
+<ion-button expand="block" routerLink="/publication">Add Post</ion-button>

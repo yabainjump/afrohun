@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-header">
+    <ion-avatar class="profile-avatar">
+      <img [src]="photoURL" alt="Photo de profil" />
+    </ion-avatar>
+  </div>
+
+  <div class="profile-details">
+    <h2>{{ user?.firstName }} {{ user?.lastName }}</h2>
+    <p><strong>Institution :</strong> {{ user?.institution }}</p>
+    <p><strong>Pays :</strong> {{ user?.country }}</p>
+    <p><strong>Email :</strong> {{ user?.email }}</p>
+    <p><strong>Téléphone :</strong> {{ user?.phone }}</p>
+  </div>
+
+  <ion-button expand="block" fill="solid" (click)="editProfile()">Modifier le profil</ion-button>
+</ion-content>

@@ -1,0 +1,43 @@
+.chat-container {
+    padding: 10px;
+  }
+  
+  .message-bubble {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 5px 0;
+    font-size: 14px;
+    position: relative;
+  }
+  
+  .sent {
+    text-align: right;
+  }
+  
+  .sent .message-bubble {
+    background-color: #0084ff;
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 0;
+  }
+  
+  .received {
+    text-align: left;
+  }
+  
+  .received .message-bubble {
+    background-color: #f1f0f0;
+    color: black;
+    margin-right: auto;
+    border-bottom-left-radius: 0;
+  }
+  
+  .timestamp {
+    font-size: 10px;
+    color: gray;
+    display: block;
+    margin-top: 5px;
+    text-align: right;
+  }
+  

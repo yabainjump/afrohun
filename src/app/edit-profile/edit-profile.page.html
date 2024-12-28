@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Modifier le profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="updateProfile()">
+    <ion-list>
+      <!-- Modification de la photo de profil -->
+      <div class="profile-avatar">
+        <ion-avatar>
+          <img [src]="photoURL" alt="Photo de profil" />
+        </ion-avatar>
+        <ion-button expand="block" fill="outline" (click)="changeProfilePicture()">Changer la photo</ion-button>
+      </div>
+
+      <!-- Nom -->
+      <ion-item>
+        <ion-label position="floating">Nom</ion-label>
+        <ion-input [(ngModel)]="user.firstName" name="firstName" required></ion-input>
+      </ion-item>
+
+      <!-- Prénom -->
+      <ion-item>
+        <ion-label position="floating">Prénom</ion-label>
+        <ion-input [(ngModel)]="user.lastName" name="lastName" required></ion-input>
+      </ion-item>
+
+      <!-- Institution -->
+      <ion-item>
+        <ion-label position="floating">Institution</ion-label>
+        <ion-input [(ngModel)]="user.institution" name="institution"></ion-input>
+      </ion-item>
+
+      <!-- Pays -->
+      <ion-item>
+        <ion-label position="floating">Pays</ion-label>
+        <ion-input [(ngModel)]="user.country" name="country"></ion-input>
+      </ion-item>
+
+      <!-- Téléphone -->
+      <ion-item>
+        <ion-label position="floating">Téléphone</ion-label>
+        <ion-input [(ngModel)]="user.phone" name="phone"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" type="submit">Enregistrer</ion-button>
+    <ion-button expand="block" fill="outline" (click)="cancel()">Annuler</ion-button>
+  </form>
+</ion-content>

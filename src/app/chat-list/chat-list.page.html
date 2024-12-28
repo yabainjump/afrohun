@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Messages</ion-title>
+  </ion-toolbar>
+  <ion-segment value="chats" (ionChange)="onSegmentChange($event)">
+    <ion-segment-button value="groups">
+      <ion-label>Groupes</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="chats">
+      <ion-label>Chats</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="calls">
+      <ion-label>Appels</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content>
+  <!-- Vue par défaut -->
+  <div *ngIf="selectedSegment === 'chats'">
+    <div *ngIf="conversations.length === 0" class="no-content">
+      <ion-icon name="chatbubbles-outline" size="large"></ion-icon>
+      <p>No Chat Rooms</p>
+    </div>
+    <ion-list *ngIf="conversations.length > 0">
+      <ion-item *ngFor="let convo of conversations" (click)="openChat(convo)">
+        <ion-avatar slot="start">
+          <img src="assets/default-profile.png" alt="User Avatar" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ convo.participants | json }}</h2>
+          <p>Dernier message...</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- Section Groupes -->
+  <div *ngIf="selectedSegment === 'groups'">
+    <div *ngIf="groups.length === 0" class="no-content">
+      <ion-icon name="people-outline" size="large"></ion-icon>
+      <p>No Groups Available</p>
+    </div>
+    <ion-list *ngIf="groups.length > 0">
+      <ion-item *ngFor="let group of groups" (click)="openGroup(group)">
+        <ion-avatar slot="start">
+          <img src="assets/group-icon.png" alt="Group Avatar" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ group.name }}</h2>
+          <p>{{ group.lastMessage }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- Section Appels -->
+  <div *ngIf="selectedSegment === 'calls'">
+    <div *ngIf="calls.length === 0" class="no-content">
+      <ion-icon name="call-outline" size="large"></ion-icon>
+      <p>No Calls Available</p>
+    </div>
+    <ion-list *ngIf="calls.length > 0">
+      <ion-item *ngFor="let call of calls" (click)="openCall(call)">
+        <ion-icon name="call" slot="start"></ion-icon>
+        <ion-label>
+          <h2>{{ call.name }}</h2>
+          <p>{{ call.time }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="addNewConversation()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (submit)="register()">
+    <ion-item>
+      <ion-label position="floating">First Name</ion-label>
+      <ion-input [(ngModel)]="firstName" name="firstName" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input [(ngModel)]="lastName" name="lastName" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="email" name="email" type="email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Institution</ion-label>
+      <ion-input [(ngModel)]="institution" name="institution" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Country</ion-label>
+      <ion-input [(ngModel)]="country" name="country" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Phone Number</ion-label>
+      <ion-input [(ngModel)]="phone" name="phone" type="tel" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Confirm Password</ion-label>
+      <ion-input [(ngModel)]="confirmPassword" name="confirmPassword" type="password" required></ion-input>
+    </ion-item>
+
+    <p class="info">Password must contain at least 6 characters, one uppercase letter, and one number.</p>
+
+    <ion-button expand="block" type="submit">Register</ion-button>
+  </form>
+</ion-content>

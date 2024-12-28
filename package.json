@@ -14,9 +14,10 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.0.0",
-    "@angular/common": "^18.0.0",
-    "@angular/compiler": "^18.0.0",
-    "@angular/core": "^18.0.0",
+    "@angular/common": "^18.2.13",
+    "@angular/compiler": "^18.2.13",
+    "@angular/core": "^18.2.13",
+    "@angular/fire": "^18.0.1",
     "@angular/forms": "^18.0.0",
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
@@ -25,6 +26,7 @@
     "@capacitor/core": "6.2.0",
     "@capacitor/haptics": "6.0.2",
     "@capacitor/keyboard": "6.0.3",
+    "@capacitor/share": "^6.0.3",
     "@capacitor/status-bar": "6.0.2",
     "@ionic/angular": "^8.0.0",
     "ionicons": "^7.0.0",
@@ -39,7 +41,7 @@
     "@angular-eslint/eslint-plugin-template": "^18.0.0",
     "@angular-eslint/schematics": "^18.0.0",
     "@angular-eslint/template-parser": "^18.0.0",
-    "@angular/cli": "^18.0.0",
+    "@angular/cli": "^16.2.16",
     "@angular/compiler-cli": "^18.0.0",
     "@angular/language-service": "^18.0.0",
     "@capacitor/cli": "6.2.0",
@@ -58,7 +60,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.4.0"
+    "typescript": "~5.5.0"
   },
   "description": "An Ionic project"
 }

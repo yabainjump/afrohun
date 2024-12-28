@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">What's on your mind?</ion-label>
+    <ion-textarea [(ngModel)]="content"></ion-textarea>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Choose an image</ion-label>
+    <input type="file" (change)="handleImageInput($event)" />
+  </ion-item>
+  
+  <ion-button expand="block" (click)="addPost()">Post</ion-button>
+  
+</ion-content>
