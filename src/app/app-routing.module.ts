@@ -53,6 +53,11 @@ const routes: Routes = [
   },
 
   {
+    path: 'start',
+    loadChildren: () =>
+      import('./start/start.module').then((m) => m.StartPageModule),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
@@ -101,6 +106,10 @@ const routes: Routes = [
   {
     path: 'search-users',
     loadChildren: () => import('./search-users/search-users.module').then( m => m.SearchUsersPageModule)
+  },
+  {
+    path: 'start',
+    loadChildren: () => import('./start/start.module').then( m => m.StartPageModule)
   },
 ];
 
