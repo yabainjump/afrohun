@@ -1,20 +1,22 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Authentication</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
+  <div id="bg"> </div>
+  <ion-list lines="none" class="ion-margin">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="email" type="email"></ion-input>
+    </ion-item> 
 
-<ion-content>
-  <ion-item>
-    <ion-label position="floating">Email</ion-label>
-    <ion-input [(ngModel)]="email" type="email"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input [(ngModel)]="password" type="password"></ion-input>
+    </ion-item>
+    <br>
 
-  <ion-item>
-    <ion-label position="floating">Password</ion-label>
-    <ion-input [(ngModel)]="password" type="password"></ion-input>
-  </ion-item>
+    <ion-button shape="round" strong="true"  class="jump" color="primary" (click)="login()">Login</ion-button>
+    <ion-text color="medium">
+      <p class="ion-margin-horizontal">Forgot Password?</p>
+    </ion-text>
+    <ion-text color="white"><p>New User ? <b color="secondary" routerLink="/registration">Sign up.</b> </p></ion-text>
 
-  <ion-button expand="block" (click)="login()">Login</ion-button>
-  <ion-button expand="block" (click)="register()">Register</ion-button>
+  </ion-list>
 </ion-content>
